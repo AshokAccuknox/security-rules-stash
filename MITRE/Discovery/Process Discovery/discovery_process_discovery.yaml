@@ -1,0 +1,20 @@
+apiVersion: security.accuknox.com/v1
+kind: KubeArmorPolicy
+metadata:
+  name: discovery-process-discovery
+  namespace: testns
+spec:
+  severity: 2
+  selector:
+    matchLabels:
+      container: ubuntu-1
+  process:
+    matchPaths:
+      - path: /bin/ps
+      - path: /lib/systemd/system/rc-local.service
+      - path: /usr/bin/ps
+      - path: /usr/bin/pgrep
+      - path: /usr/bin/top
+      - path: /usr/bin/htop
+  action: 
+    Block
