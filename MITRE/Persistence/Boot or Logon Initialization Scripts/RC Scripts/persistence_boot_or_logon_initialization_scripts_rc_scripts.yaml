@@ -1,4 +1,4 @@
-apiVersion: security.accuknox.com/v1
+apiVersion: security.kubearmor.com/v1
 kind: KubeArmorPolicy
 metadata:
   name: persistence-blis-rc-scripts
@@ -31,4 +31,4 @@ spec:
         recursive: true
       - dir: /usr/lib/systemd/system/rc-local.service.d 
   action:
-    Block
+    BlockWithAudit
