@@ -27,4 +27,4 @@ spec:
       - dir: /lib/systemd/system/
         recursive: true
         readOnly: false
-  action: Audit
+  action: BlockWithAudit
