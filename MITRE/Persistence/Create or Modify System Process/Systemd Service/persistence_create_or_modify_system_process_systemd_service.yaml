@@ -24,7 +24,7 @@ spec:
       - dir: /usr/lib/systemd/
         recursive: true
         readOnly: false
-      - dir: /lib/systemd/system
+      - dir: /lib/systemd/system/
         recursive: true
         readOnly: false
   action: Audit
