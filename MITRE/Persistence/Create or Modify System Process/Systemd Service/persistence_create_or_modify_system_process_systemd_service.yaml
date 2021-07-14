@@ -2,7 +2,7 @@ apiVersion: security.kubearmor.com/v1
 kind: KubeArmorPolicy
 metadata:
   name: create-or-modify-system-process-systemd-service
-  namespace: testns  #use your namespace name here
+  namespace: multiubuntu  #use your namespace name here
 spec:
   severity: 5
   selector:
