@@ -2,7 +2,7 @@ apiVersion: security.kubearmor.com/v1
 kind: KubeArmorPolicy
 metadata:
   name: persistence-blis-rc-scripts
-  namespace: testns  #use your namespace name here
+  namespace: multiubuntu  #use your namespace name here
 spec:
   severity: 5
   selector:
@@ -16,9 +16,10 @@ spec:
       - path: /usr/lib/systemd/system/rc-local.service
       - path: /usr/lib/systemd/system/rc.service
     matchDirectories:
-      - dir: /lib/systemd/system/rc-local.service.d
+      - dir: /lib/systemd/system/rc-local.service.d/
         recursive: true
-      - dir: /usr/lib/systemd/system/rc-local.service.d
+      - dir: /usr/lib/systemd/system/rc-local.service.d/
+        recursive: true
   file:
     matchPaths:
       - path: /etc/rc.local
@@ -27,8 +28,11 @@ spec:
       - path: /usr/lib/systemd/system/rc-local.service
       - path: /usr/lib/systemd/system/rc.service
     matchDirectories:
-      - dir: /lib/systemd/system/rc-local.service.d
+      - dir: /lib/systemd/system/rc-local.service.d/
         recursive: true
-      - dir: /usr/lib/systemd/system/rc-local.service.d 
+        readOnly: false
+      - dir: /usr/lib/systemd/system/rc-local.service.d/
+        recursive: true
+        readOnly: false
   action:
     BlockWithAudit
