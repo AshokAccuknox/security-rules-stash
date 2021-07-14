@@ -2,7 +2,7 @@ apiVersion: security.kubearmor.com/v1
 kind: KubeArmorPolicy
 metadata:
   name: discovery-account-discovery-local-account
-  namespace: testns  #use your namespace name here
+  namespace: multiubuntu  #use your namespace name here
 spec:
   severity: 3
   selector:
